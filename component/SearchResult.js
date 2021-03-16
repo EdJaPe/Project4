@@ -1,4 +1,4 @@
-// const SearchResult =(props) => {
+// export default function SearchResult() {
     
 //     return (
 //         <div>
@@ -7,4 +7,3 @@
 //     );
 // }
 
-// export default SearchResult
