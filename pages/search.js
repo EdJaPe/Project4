@@ -17,7 +17,20 @@ export default function Search() {
         params: { postalCode: searchQuery, countryCode: country },
         headers: { 'x-api-key': API_KEY, 'Content-type': 'application/json' }
     };
-    let result;
+    // const options = {
+    //     "method": "GET",
+    //     "hostname": "api.ambeedata.com",
+    //     "port": null,
+    //     "path": "/latest/by-city?city="+`${searchQuery}`,
+    //     "headers": {
+    //         "x-api-key": API_KEY,
+    //         "Content-type": "application/json"
+    //     }
+    // };
+
+
+
+    // let result;
     const apiCall = (e) => {
         console.log("💰", searchQuery)
 
@@ -25,22 +38,19 @@ export default function Search() {
         axios.request(options).then(function (response) {
             console.log(response.data);
             setResult(response.data)
-            results = result.stations.map((place, i)=> {
-                if(place.length > 0) {
-                    return(
-                        
-                            <h3 key={i}>PM25:{place.PM25}</h3>
-                        
-                    )
-                        
-                    }else {
-                        return(
-                            <h3>Your results are Loading....</h3>
+            // let results = result.stations.map((place, i)=> {
+            //     if(place.length > 0) {
+            //         return(                        
+            //                 <h3 key={i}>PM25:{place.PM25}</h3>                        
+            //         )                        
+            //         }else {
+            //             return(
+            //                 <h3>Your results are Loading....</h3>
 
-                        )
-                    }
+            //             )
+            //         }
                 
-            } )
+            // } )
 
 
         }).catch(function (error) {
@@ -66,7 +76,7 @@ export default function Search() {
             </div>
             <button onClick={(e) => apiCall(e)}>Search</button>
             <div>
-                {results}
+                {/* {results} */}
             </div>
 
 
