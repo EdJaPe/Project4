@@ -11,6 +11,8 @@ export default function Search() {
     const [country, setCountry] = useState('')
     const [results, setResults] = useState([])
     const [searchType, setSearchType] = useState("city")
+    // saved cities by using property of useState
+
 
     var options = {
         method: 'GET',
